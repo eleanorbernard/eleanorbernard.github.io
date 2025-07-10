@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eleanor Bernard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent || navigator.vendor || window.opera);
+      const path = window.location.pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+  
+      const isBase = (filename === "" || filename === "index.html" || filename === "/");
+      const isMobilePage = filename.startsWith("mobile-");
+  
+      if (isBase) {
+        if (isMobile && filename !== "mobile-index.html") {
+          window.location.href = "mobile-index.html";
+        } else if (!isMobile && filename === "mobile-index.html") {
+          window.location.href = "index.html";
+        }
+      }
+    })();
+  </script>
+  
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('newhomepagebackground.png');
+      background-size: cover;       /* Cover entire screen */
+      background-position: center;  /* Center the image */
+      background-repeat: no-repeat; /* Prevent tiling */
+      margin: 0;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<header>
+    <!-- maybe video-->
+</header>
+
+<body>
+
+
+  
+    <div class="home-col">
+
+        <img src="assets/otherwebphotos-vid/websitename.jpg"style="height: 8vh !important; width: auto;">
+
+        <div class="link-row">
+            <a href="mailto:eleanorb@outlook.com">email</a>
+            <a href="https://www.instagram.com/eleanart_/" target="_blank">instagram</a>
+            <a href="about.html">about</a>
+            <a href="archive.html">archive</a>
+        </div>
+
+        <div class="link-col">
+            <a href="paintings.html">paintings</a>
+            <a href="paper.html">works on paper</a>
+            <a href="installations.html">installations</a>
+            <a href="jewlery.html">jewelry</a>
+            <a href="photos.html">photos</a>
+        </div>
+
+    </div>
+
+</body>
+
+<footer>
+
+    <!-- maybe video-->
+</footer>
+
+</html>

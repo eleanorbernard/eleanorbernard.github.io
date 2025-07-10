@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Jewlery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="redirect.js"></script>
+        <link rel="stylesheet" href="mobile-styles.css">
+        <link rel="icon" href="favicon.png" type="image/png">
+    </head>
+
+    <header>
+        <div class="portfolio-header">
+            <a href="index.html" class="home-shell"><img
+                    src="assets/otherwebphotos-vid/crabicon 3.png"></a> <!-- small, upper left of screen-->
+            <h1>jewlery</h1>
+        </div>
+    </header>
+
+    <body>
+
+      <div class="portfolio">
+    
+        <!-- PENDANTS -->
+        <h2>Pendants:</h2>
+        <div class="port-item">
+          <div class="port-image">
+         
+            <img src="assets/jewelry/1mothpendant.jpg">
+            <img src="assets/jewelry/4julypendant.jpeg">
+            <img src="assets/jewelry/6goosependant.jpg">
+            <img src="assets/jewelry/7duckengraving.jpg">
+            <img src="assets/jewelry/7duckpendant.jpg">
+            <img src="assets/jewelry/10girldogpendant.jpg">
+          </div>
+          <div class="port-info">
+            <p>Moth Pendant, 2024<br>Sterling silver, brass</p>
+            <p>Engraved July Pendant, 2024<br>Sterling silver, ruby</p>
+            <p>Wild Goose Pendant, 2024<br>Brass, sterling silver</p>
+            <p>Engraved Duck Pendant, 2024<br>Sterling silver, brass</p>
+            <p>Engraved Duck Pendant, 2024<br>Sterling silver, brass</p>
+            <p>Girl and Dog Pendant, 2024<br>Sterling silver, brass</p>
+          </div>
+          <div class="port-controls">
+            <button class="back"> &lt; </button>
+            <button class="next"> &gt; </button>
+          </div>
+        </div>
+    
+        <!-- RINGS -->
+        <h2>Rings:</h2>
+        <div class="port-item">
+          <div class="port-image">
+           
+            <img src="assets/jewelry/2sisterring.jpg">
+            <img src="assets/jewelry/2sisterringhand.jpg">
+            <img src="assets/jewelry/5flowermothrings.jpg">
+            <img src="assets/jewelry/11sring.jpg">
+          </div>
+          <div class="port-info">
+            <p>Sister Ring, 2024<br>Sterling silver</p>
+            <p>Sister Ring, 2024<br>Sterling silver</p>
+            <p>Flower Ring, Green Moth Ring, 2024<br>Sterling silver and brass<br>Sterling silver, jade</p>
+            <p>S Ring, 2023<br>Sterling silver, clear cz stones</p>
+          </div>
+          <div class="port-controls">
+            <button class="back"> &lt; </button>
+            <button class="next"> &gt; </button>
+          </div>
+        </div>
+    
+        <!-- EARRINGS -->
+        <h2>Earrings:</h2>
+        <div class="port-item">
+          <div class="port-image">
+            
+            <img src="assets/jewelry/8ssflowerearring.jpeg">
+            <img src="assets/jewelry/9birdearring.jpeg">
+          </div>
+          <div class="port-info">
+            <p>Silver Flower Earrings, 2024<br>Sterling silver</p>
+            <p>Robin Earrings, 2024<br>Brass, sterling silver</p>
+          </div>
+          <div class="port-controls">
+            <button class="back"> &lt; </button>
+            <button class="next"> &gt; </button>
+          </div>
+        </div>
+    
+        <!-- CHAINS -->
+        <h2>Chains:</h2>
+        <div class="port-item">
+          <div class="port-image">
+         
+            <img src="assets/jewelry/3cloverchain.jpg">
+            <img src="assets/jewelry/12cownecklace.jpg">
+            <img src="assets/jewelry/13sschain.jpg">
+          </div>
+          <div class="port-info">
+            <p>Clover Chain, 2024<br>Brass</p>
+            <p>Cow Necklace, 2023<br>Brass</p>
+            <p>Silver Chain, 2023<br>Sterling silver</p>
+          </div>
+          <div class="port-controls">
+            <button class="back"> &lt; </button>
+            <button class="next"> &gt; </button>
+          </div>
+        </div>
+    
+      </div>
+    
+    </body>
+    
+    <footer>
+      <div class="portfolio-footer">
+        <img src="assets/otherwebphotos-vid/websitename.jpg" style="width: 20vw;">
+      </div>
+    </footer>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".port-item").forEach(item => {
+        const imageContainer = item.querySelector(".port-image");
+        const images = imageContainer.querySelectorAll("img");
+        const captions = item.querySelectorAll(".port-info p");
+    
+        if (images.length > 1) {
+          let currentIndex = 0;
+    
+          images.forEach((img, i) => {
+            img.style.display = i === 0 ? "block" : "none";
+          });
+          captions.forEach((cap, i) => {
+            cap.style.display = i === 0 ? "block" : "none";
+          });
+    
+          const showImage = index => {
+            images.forEach((img, i) => {
+              img.style.display = i === index ? "block" : "none";
+            });
+            captions.forEach((cap, i) => {
+              cap.style.display = i === index ? "block" : "none";
+            });
+          };
+    
+          const backButton = item.querySelector(".back");
+          const nextButton = item.querySelector(".next");
+    
+          backButton?.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+          });
+    
+          nextButton?.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+          });
+        }
+      });
+    });
+    </script>
+    
+    </html>
+    

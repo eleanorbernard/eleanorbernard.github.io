@@ -1,0 +1,284 @@
+
+/* Base reset and font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Baskervville", serif;
+}
+
+a {
+    text-decoration: underline;
+    font-style: normal;
+    color: blue;
+    padding: 0.25em 0;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+/* Layout container */
+.home-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Horizontal link row */
+.link-row {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Vertical link column */
+.link-col {
+    margin-top: 16vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+/* Images */
+
+
+/* --- Header --- */
+.portfolio-header {
+  position: relative;
+  height: 100px; /* adjust as needed */
+  margin-bottom: 5vh;
+}
+
+/* Absolutely position the shell in the top-left */
+.home-shell {
+  position: absolute;
+  top: 50%;
+  left: 2em;
+  transform: translateY(-50%);
+  width: 50px;
+}
+
+.home-shell img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Center the h1 in the window */
+.portfolio-header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: blue;
+}
+
+
+  
+  /* --- About Main Section --- */
+
+
+  .about-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 80vw;
+    margin: 6vh auto;
+    padding: 0 1em;
+    text-align: center;
+  }
+  
+  .about-image {
+    width: 50vw;
+    margin-bottom: 1.4em;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    font-style: normal;
+  }
+  
+  
+
+  
+  /* --- Footer --- */
+  
+  .about-footer {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1em 0;
+  }
+
+
+
+  .portfolio-footer {
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1em 0;
+  }
+  
+  
+  
+
+
+
+    /* --- portfolio --- */ 
+    
+    .portfolio {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 100vw;
+      margin: 0 auto;
+    }
+
+    .portfolio h2 {
+      position: relative;
+      text-align: center;
+      font-size: 1em;
+    }
+    
+    .port-item {
+      position: relative;
+      text-align: center;
+      height: 65vh; /* Fixed height per item */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Added */
+      gap: 0.5em;             /* Added */
+      margin: 0 auto 5vh auto; /* Combined margin-bottom with centering */
+      width: 100%;
+      
+      overflow: hidden;
+    }
+    
+    .port-image {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .port-image img {
+      display: block;
+      width: 100%;       /* Added */
+      height: auto;      /* Added */
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    .port-info {
+      text-align: center;
+      padding: 1em 0 0 0;
+    }
+    
+    .port-info p {
+      margin: 0;
+      font-size: 1rem;
+      font-style: italic;
+    }
+    
+    /* Only hide extra images when multiple */
+    .port-image.multiple img {
+      display: none;
+    }
+    
+    .port-image.multiple img.active {
+      display: block;
+    }
+
+
+    .port-controls button.back, button.next {
+      margin-top: 1em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 30px;
+      height: 20px;
+      text-indent: -9999px;
+      overflow: hidden;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .port-controls button.back {
+      background-image: url('leftarrow.png');
+    }
+    
+    .port-controls button.next {
+      background-image: url('rightarrow.png');
+    }
+    
+    
+
+  /* --- Archive Section --- */
+
+  .archive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 5vh;
+    gap: 2vh;
+  }
+  
+  .archive-item {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em; /* space between image and text */
+  }
+  
+  .archive-image {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .archive-sub {
+    position: absolute;
+    top: calc(50% + 2rem); /* Adjust this based on h1 font-size */
+    left: 50%;
+    transform: translateX(-45%);
+    font-size: 0.7rem;
+    font-style: italic;
+    color: #333;
+    margin: 0;
+    width: 65vw;
+  }
+  
