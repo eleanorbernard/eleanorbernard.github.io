@@ -143,6 +143,11 @@ a:hover {
     gap: 2em;
     padding: 1em 0;
   }
+
+ .portfolio-footer img {
+      width:50vw !important;
+    }
+    
   
   
   
