@@ -18,7 +18,41 @@
         </div>
     </header>
 
+        <script>
+            (function () {
+              const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent || navigator.vendor || window.opera);
+              const path = window.location.pathname;
+              const filename = path.substring(path.lastIndexOf('/') + 1);
+  
+              const isBase = (filename === "" || filename === "index.html" || filename === "/");
+              const isMobilePage = filename.startsWith("mobile-");
+  
+              if (isBase) {
+             if (isMobile && filename !== "mobile-index.html") {
+              window.location.href = "mobile-index.html";
+                } else if (!isMobile && filename === "mobile-index.html") {
+              window.location.href = "index.html";
+                    }
+                  }
+                 })();
+
+            </script>
+  
     <body>
+  
+        <div class="archive">
+         <div class="port-item">
+            <div class="port-image">
+                <img src="assets/archive/rosaquote.jpg">
+            </div>
+                <p class="archive-p">
+                    My senior thesis!
+                     <br><div class="link-row">
+                        <a href="https://docs.google.com/document/d/1Ei8cZprwcaP4XICre__HEd1xvoZOfJ3m5HDZF4vWr8w/edit?usp=sharing" target="_blank">Effervescing Life: 
+                        Examining Grief and Change Through Engagement with Land and Rosa Luxemburg’s Herbarium Notebooks</a>
+                        </div>
+                </p>
+            </div>   
 
         <div class="archive">
          <div class="port-item">
